@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kompetisi Young Creators Competition 2025</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="card">
+    <h1>Dino mencari bintang</h1>
+    <span class="badge">Young Creators Competition 2025</span>
+
+  </header>
+
+  <main class="wrap">
+    <section class="papan card">
+      <div class="hud">
+        <div class="kompas" id="kompas" title="Arah">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="hud-right">
+          <span id="btn-log" class="badge">Rekap Babak</span>
+          <div class="star-counter" id="star-counter">
+            <span class="star-ico">★</span>
+            <span id="star-count">0</span>
+          </div>
+          <div class="timer" id="timer">03:00</div>
+          <!-- Panel info -->
+          <button id="btn-info" class="badge info-badge" type="button" title="Cara Pakai">ℹ️ Cara Pakai</button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="small" style="margin-top:10px">
+        <span id="level-info">6×6 petak</span> •
+        <span id="step-limit-info">Batas langkah: —</span>
+      </div>
+      <div class="small" id="prompt-line" style="margin-top:6px;color:#6a4a00;"></div>
+    </section>
+
+    <aside class="panel card">
+      <div class="small"><strong>Perintah</strong> (klik atau seret ke area program):</div>
+
+      <div class="btns">
+        <button id="btn-maju">➡ Maju</button>
+        <button id="btn-kiri">⟲ Kiri</button>
+        <button id="btn-kanan">⟳ Kanan</button>
+        <button id="btn-ulangi" disabled>⤿×2 Ulangi 2×</button>
+      </div>
+
+      <div class="program" id="program" aria-label="urutan-kode">
+        <ol id="list"></ol>
+      </div>
+
+      <div class="footer">
+        <button id="btn-run" class="grow">▶ Jalankan</button>
+        <button id="btn-undo">↶ Undo</button>
+        <button id="btn-reset">⟲ Reset</button>
+      </div>
+      <button id="btn-skip" class="btn-skip" title="Lewati babak (tidak bisa kembali)">
+        Lewati Babak
+      </button>
+    </aside>
+  </main>
+
+  <div id="popup" class="popup-backdrop hidden" role="dialog" aria-modal="true">
+    <div id="popup-card" class="popup">
+      <p id="popup-text">Komodo telah tertubruk, coba lagi!</p>
+      <div id="popup-actions" class="popup-actions hidden">
+        <button id="popup-yes" class="yes">
+          <svg class="popup-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Ya
+        </button>
+        <button id="popup-no" class="no">
+          <svg class="popup-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Tidak
+        </button>
+      </div>
+
+      <div id="popup-close-wrap" class="popup-actions hidden">
+        <button id="popup-close" class="close-btn">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="fx-layer"></div>
+
+  <script>
+    window.THEME = {
+      background: "assets/background.svg",
+      block: "assets/block.svg",
+      goal: "assets/star.svg",
+      character: "assets/komodo.png"
+    };
+  </script>
+
+<script src="levels/stages.js"></script>
+<script>
+  window.THEME = { character: "assets/komodo.png", block:"assets/block.svg", goal:"assets/star.svg", background:"assets/background.svg" };
+</script>
+
+<script src="js/script.js" defer></script>
+
+</body>
+</html>
